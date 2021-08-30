@@ -1,0 +1,17 @@
+@mixin flexColumn($alignItems: center, $justifyContent: center, $flexDirection: column) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+@mixin flex($alignItems: center, $justifyContent: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@function calculadora-rem($size){
+    $tamanho: $size/16;
+    @return $tamanho + rem;
+}

@@ -1,0 +1,115 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+body{
+    height: 100vh;
+    width: 100vw;
+    @include flex;
+    color: $lightPurple;
+    font-family: $openSans;
+}
+
+.container-header{
+    height: auto;
+    width: 100%;
+    @include flexColumn;
+    color: $white;
+}
+
+.delivery-payment-wrapper{
+    height: 30px;
+    width: 100%;
+    background-color: $darkPurple;
+    @include flex;
+    color: $white;
+    font-size: calculadora-rem(12);
+    text-transform: uppercase;
+}
+
+.menu-logo-wrapper{
+    height: 79px;
+    width: 100%;
+    background-color: $lightPurple;
+    @include flex;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-family: $ovo;
+    font-size: calculadora-rem(48);
+    font-weight: 400;
+    margin-right: $marginRigthMenu;
+}
+
+.menu-wrapper{
+    font-weight: 700;
+    font-size: calculadora-rem(14);
+}
+
+.menu-item{
+    color: $white;
+    text-decoration: none;
+    margin-right: $marginRigthMenu;
+}
+
+.image-menu{
+    height: 25px;
+    width: auto;
+    cursor: pointer;
+    margin-right: $marginRigthMenu;
+}
+
+.image-banner{
+    height: 460px;
+    width: 100%;
+}
+
+.warnning-header-wrapper{
+    height: 80px;
+    width: 100%;
+    background-color: $darkPurple;
+    @include flex;
+    justify-content: space-between;
+    padding: 20px 151px;
+    box-sizing: border-box
+}
+
+.warnning-header-item{
+    @include flex;
+}
+
+.warnning-text-wrapper{
+    @include flexColumn;
+    align-items:flex-start ;
+    margin-left: 15px;
+}
+
+.warnning-title{
+    font-weight: 700;
+    font-size: calculadora-rem(16);
+    text-transform: uppercase;
+}
+
+.warnning-text{
+    font-size: calculadora-rem(12);
+}
+
+.image-padlock{
+    height: 42px;
+    width: 31px;
+}
+
+.image-card{
+    height: 29px;
+    width: 40px;
+}
+
+.image-truck{
+    height: 33px;
+    width: 51px;
+}
+
+.image-certified{
+    height: 43px;
+    width: 31px;
+}
