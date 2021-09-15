@@ -2,9 +2,9 @@
 @import 'mixins.scss';
 
 body{
-    height: 100vh;
+    // height: 100vh;
     width: 100vw;
-    @include flex;
+    @include flexColumn;
     color: $lightPurple;
     font-family: $openSans;
 }
@@ -23,7 +23,7 @@ body{
     @include flex;
     color: $white;
     font-size: calculadora-rem(12);
-    text-transform: uppercase;
+    text-transform: $upperCase;
 }
 
 .menu-logo-wrapper{
@@ -31,7 +31,7 @@ body{
     width: 100%;
     background-color: $lightPurple;
     @include flex;
-    text-transform: uppercase;
+    text-transform: $upperCase;
 }
 
 .logo{
@@ -71,7 +71,8 @@ body{
     @include flex;
     justify-content: space-between;
     padding: 20px 151px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin-bottom: 44px;
 }
 
 .warnning-header-item{
@@ -87,7 +88,7 @@ body{
 .warnning-title{
     font-weight: 700;
     font-size: calculadora-rem(16);
-    text-transform: uppercase;
+    text-transform: $upperCase;
 }
 
 .warnning-text{
@@ -112,4 +113,12 @@ body{
 .image-certified{
     height: 43px;
     width: 31px;
+}
+
+.title-precious-stone{
+    color: $darkGray;
+    font-weight: 400;
+    font-size: calculadora-rem(24);
+    text-transform: $upperCase;
+    margin-bottom: 22px;
 }

@@ -1,5 +1,4 @@
 body {
-  height: 100vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,6 +9,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #9A7AA0;
   font-family: "Open Sans", sans-serif;
 }
@@ -116,6 +119,7 @@ body {
   padding: 20px 151px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-bottom: 44px;
 }
 
 .warnning-header-item {
@@ -178,5 +182,13 @@ body {
 .image-certified {
   height: 43px;
   width: 31px;
+}
+
+.title-precious-stone {
+  color: #5C5762;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 22px;
 }
 /*# sourceMappingURL=styles.css.map */
