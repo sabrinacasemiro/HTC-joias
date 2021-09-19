@@ -91,13 +91,24 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  height: 100%;
 }
 
 .menu-item {
+  height: 100%;
   color: #FFFFFF;
   text-decoration: none;
   margin-right: 31px;
   white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__menu--wrapper {
@@ -112,6 +123,51 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.header__menu--wrapper:hover .header__menu--items {
+  min-height: 125px;
+  max-height: 383px;
+  min-width: 194px;
+  max-width: 240px;
+  background-color: #FFFFFFF2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 6px solid #614B65;
+  position: absolute;
+  top: 75px;
+  overflow: auto;
+  z-index: 2;
+}
+
+.header__menu--wrapper:hover .header__menu--items::-webkit-scrollbar {
+  width: 12px;
+}
+
+.header__menu--wrapper:hover .header__menu--items::-webkit-scrollbar-track {
+  background-color: #E5E3E2;
+}
+
+.header__menu--wrapper:hover .header__menu--items::-webkit-scrollbar-thumb {
+  height: 57px;
+  border-radius: 33px;
+  background-color: #9A7AA0;
 }
 
 .header__menu--items {
@@ -120,6 +176,28 @@ body {
 
 .header__menu--sub-item {
   display: none;
+}
+
+.header__menu--item-category {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 39px;
+  font-size: 0.8125rem;
+  color: #302E2B;
+  text-decoration: none;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__menu--item-category:hover {
+  background-color: #F1F1F1;
 }
 
 .image-menu {

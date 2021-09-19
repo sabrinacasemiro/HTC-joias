@@ -16,9 +16,9 @@ const renderMenuDesktop = (menu) => {
                         <div class='header__menu--items'>
                             ${department.children.map((category) => {
                                 if(category.children === undefined){
-                                    return `<a href=${category.url}>${category.name}`
+                                    return `<a href=${category.url} class='header__menu--item-category'>${category.name}`
                                 } else{
-                                    return `<a href=${category.url}>${category.name}
+                                    return `<a href=${category.url} class='header__menu--item-category'>${category.name}
                                     <div class='header__menu--sub-item'>
                                     ${category.children.map((subcategory) => {
                                         return `<a href=${subcategory.url}>${subcategory.name}`

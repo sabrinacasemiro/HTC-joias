@@ -46,13 +46,16 @@ body{
     font-size: calculadora-rem(14);
     @include flex;
     justify-content: space-around;
+    height: 100%;
 }
 
 .menu-item{
+    height: 100%;
     color: $white;
     text-decoration: none;
     margin-right: $marginRigthMenu;
     white-space: nowrap;
+    @include flex;
 }
 
 .header__menu{
@@ -60,6 +63,41 @@ body{
         height: 100%;
         width: 100%;
         @include flex;
+        box-sizing: border-box;
+        position: relative;
+
+        &:hover{
+            & .header__menu{
+                &--items{
+                    min-height: 125px;
+                    max-height: 383px;
+                    min-width: 194px;
+                    max-width: 240px;
+                    background-color: $whiteOpacity;
+                    @include flexColumn;
+                    box-sizing: border-box;
+                    border-top: 6px solid $darkPurple;
+                    position: absolute;
+                    top: 75px;
+                    overflow: auto;
+                    z-index: 2;
+
+                    &::-webkit-scrollbar{
+                        width: 12px;
+                    }
+
+                    &::-webkit-scrollbar-track{
+                        background-color: #E5E3E2;
+                    }
+
+                    &::-webkit-scrollbar-thumb{
+                        height: 57px;
+                        border-radius: 33px;
+                        background-color: $lightPurple;
+                    } 
+                }
+            }
+        }
     }
     &--items{
         display: none;
@@ -67,7 +105,22 @@ body{
     &--sub-item{
         display: none;
     }
+    &--item-category{
+        width: 100%;
+        display: flex;
+        min-height: 39px;
+        font-size: calculadora-rem(13);
+        color: $headerMenuColor;
+        text-decoration: none;
+        @include flex;
+
+        &:hover{
+            background-color: $backgroundMenuItem;
+        }
+    }
 }
+
+
 
 .image-menu{
     height: 25px;
