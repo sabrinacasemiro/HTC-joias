@@ -44,12 +44,29 @@ body{
 .menu-wrapper{
     font-weight: 700;
     font-size: calculadora-rem(14);
+    @include flex;
+    justify-content: space-around;
 }
 
 .menu-item{
     color: $white;
     text-decoration: none;
     margin-right: $marginRigthMenu;
+    white-space: nowrap;
+}
+
+.header__menu{
+    &--wrapper{
+        height: 100%;
+        width: 100%;
+        @include flex;
+    }
+    &--items{
+        display: none;
+    }
+    &--sub-item{
+        display: none;
+    }
 }
 
 .image-menu{

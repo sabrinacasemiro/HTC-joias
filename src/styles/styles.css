@@ -80,12 +80,46 @@ body {
 .menu-wrapper {
   font-weight: 700;
   font-size: 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .menu-item {
   color: #FFFFFF;
   text-decoration: none;
   margin-right: 31px;
+  white-space: nowrap;
+}
+
+.header__menu--wrapper {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__menu--items {
+  display: none;
+}
+
+.header__menu--sub-item {
+  display: none;
 }
 
 .image-menu {
