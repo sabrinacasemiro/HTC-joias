@@ -13,18 +13,22 @@ const renderMenuDesktop = (menu) => {
             structureMenu += `
                 <div class='header__menu--wrapper'>
                     <a href=${department.url} class='menu-item'>${department.name}</a>
-                        <div class='header__menu--items'>
-                            ${department.children.map((category) => {
+                        <div class='header__menu--items ${department.children.some(item => item.children) && 'header__menu--items-children'}'>
+                            ${department.children.reduce((acc, category) => {
                                 if(category.children === undefined){
-                                    return `<a href=${category.url} class='header__menu--item-category'>${category.name}`
+                                    return acc + `<a href=${category.url} class='header__menu--item-category'>${category.name}</a>`
                                 } else{
-                                    return `<a href=${category.url} class='header__menu--item-category'>${category.name}
+                                    return acc + `
+                                    <div class='header__menu--items-wrapper'>
+                                    <a href=${category.url} class='header__menu--item-category'>${category.name}</a>
                                     <div class='header__menu--sub-item'>
-                                    ${category.children.map((subcategory) => {
-                                        return `<a href=${subcategory.url}>${subcategory.name}`
-                                    })}`
+                                    ${category.children.reduce((acc, subcategory) => {
+                                        return acc + `<a href=${subcategory.url} class='header__menu--item-sub-category'>${subcategory.name} </a>`
+                                    }, '')}
+                                    </div>
+                                    </div>`
                                 }
-                            })}
+                            }, '')}
                         </div>
                 </div>`
         }

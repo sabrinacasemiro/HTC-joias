@@ -2,7 +2,6 @@
 @import 'mixins.scss';
 
 body{
-    // height: 100vh;
     width: 100vw;
     @include flexColumn;
     color: $lightPurple;
@@ -38,7 +37,7 @@ body{
     font-family: $ovo;
     font-size: calculadora-rem(48);
     font-weight: 400;
-    margin-right: $marginRigthMenu;
+    margin: 0 $marginMenu;
 }
 
 .menu-wrapper{
@@ -47,15 +46,18 @@ body{
     @include flex;
     justify-content: space-around;
     height: 100%;
+    
+    
 }
 
 .menu-item{
     height: 100%;
+    width: 100%;
     color: $white;
     text-decoration: none;
-    margin-right: $marginRigthMenu;
     white-space: nowrap;
     @include flex;
+    margin: 0 $marginMenu;
 }
 
 .header__menu{
@@ -65,22 +67,35 @@ body{
         @include flex;
         box-sizing: border-box;
         position: relative;
+        margin-right: 31px;
 
         &:hover{
+            & .menu-item{
+                color: #413543;
+            }
+            
             & .header__menu{
                 &--items{
                     min-height: 125px;
                     max-height: 383px;
                     min-width: 194px;
                     max-width: 240px;
-                    background-color: $whiteOpacity;
                     @include flexColumn;
                     box-sizing: border-box;
                     border-top: 6px solid $darkPurple;
                     position: absolute;
                     top: 75px;
-                    overflow: auto;
                     z-index: 2;
+                    justify-content: unset;                    
+                }
+            }
+        }
+
+        &:last-child{
+            & .header__menu{
+                &--items{
+                    right: 12px;
+                    overflow: auto;
 
                     &::-webkit-scrollbar{
                         width: 12px;
@@ -97,10 +112,12 @@ body{
                     } 
                 }
             }
+            
         }
     }
     &--items{
         display: none;
+        background-color: $whiteOpacity;
     }
     &--sub-item{
         display: none;
@@ -113,10 +130,66 @@ body{
         color: $headerMenuColor;
         text-decoration: none;
         @include flex;
+        animation: hoverMenu 500ms;
+        transition-duration: 500ms;
 
         &:hover{
             background-color: $backgroundMenuItem;
         }
+    }
+
+    &--items-children{
+        background-color: $lightPurpleOpacity;
+        position: relative;
+        height: 356px;
+        width: 240px;
+        
+        & .header__menu{
+            &--item-category{
+                color: $white;
+
+                &:hover{
+                    background-color: $darkPurple;
+                }
+            }
+        }
+    }
+
+    &--items-wrapper{
+        width: 100%;
+        position: relative;
+        
+        &:hover{            
+            & .header__menu--sub-item{
+               min-height: 125px;
+               max-height: 383px;
+               width: 240px;
+               @include flexColumn;
+               box-sizing: border-box;
+               border-top: 6px solid $darkPurple;
+               position: absolute;
+               top: -45px;
+               left: 240px;
+               background-color: $whiteOpacity;
+               z-index: 2;
+               
+            }
+            & .header__menu--item-sub-category{
+                width: 100%;
+                display: flex;
+                min-height: 39px;
+                font-size: calculadora-rem(13);
+                color: $headerMenuColor;
+                text-decoration: none;
+                @include flex;
+                animation: hoverMenu 500ms;
+                transition-duration: 500ms;
+
+                &:hover{
+                    background-color: $backgroundMenuItem;
+                }
+            }
+       }
     }
 }
 
@@ -126,7 +199,7 @@ body{
     height: 25px;
     width: auto;
     cursor: pointer;
-    margin-right: $marginRigthMenu;
+    margin-right: $marginMenu;
 }
 
 .image-banner{
@@ -191,4 +264,13 @@ body{
     font-size: calculadora-rem(24);
     text-transform: $upperCase;
     margin-bottom: 22px;
+}
+
+@keyframes hoverMenu{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
